@@ -2,27 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Google Translate Isolation Test</title>
+  <title>HTML Encoding Test</title>
 </head>
 <body>
-  <h2>Origin Isolation Test</h2>
-  <pre id="result"></pre>
+  <h1>Translation Encoding Test</h1>
 
-  <script>
-    const results = {
-      origin: location.origin,
-      hostname: location.hostname,
-      isTopWindow: window === window.top
-    };
+  <pre>
+&lt;img src=x onerror=alert(1)&gt;
+  </pre>
 
-    try {
-      results.topOrigin = window.top.location.origin;
-    } catch (e) {
-      results.topOrigin = "Blocked by Same-Origin Policy";
-    }
-
-    document.getElementById("result").textContent =
-      JSON.stringify(results, null, 2);
-  </script>
+  <p>This is a harmless HTML escaping test.</p>
 </body>
 </html>
