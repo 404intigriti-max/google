@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="500" height="200"
+     viewBox="0 0 500 200"
+     onload="console.log('EXPERT_POC_ONLOAD_EXECUTED')">
+
+  <script>
+    console.log('EXPERT_POC_SCRIPT_EXECUTED');
+  </script>
+
+  <rect width="500" height="200" fill="#f2f2f2"/>
+
+  <text x="20" y="55" font-size="22" fill="#222">
+    Authorized security test
+  </text>
+
+  <text x="20" y="95" font-size="16" fill="#444">
+    SVG active-content validation
+  </text>
+
+  <a href="https://example.com/">
+    <text x="20" y="150" fill="blue" font-size="18">
+      Test external hyperlink
+    </text>
+  </a>
+</svg>
